@@ -1,13 +1,15 @@
-body{
-    background:linear-gradient(to left, rgb(255, 255, 199),rgb(255, 185, 56));
+body {
+    background-color: white;
     margin: 0;
+    text-align: center;
+    color: #3F3844;
 }
 
-.navbar{
+.navbar {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    background-color: rgb(29, 29, 29);
+    background-color: black;
     color: white;
     margin: 0;
     padding: 0;
@@ -15,7 +17,7 @@ body{
     height: 40px;
 }
 
-li{
+li {
     width: 160px;
     height: 40px;
     padding: 0px;
@@ -26,15 +28,19 @@ li{
     line-height: 40px;
 }
 
-li:last-child{
-    border-right:none;
-}
-
-.active{
+li:hover {
     background-color: coral;
 }
 
-a{
+li:last-child {
+    border-right: none;
+}
+
+.active {
+    background-color: coral;
+}
+
+a {
     color: white;
     text-decoration: none;
     text-align: center;
@@ -43,10 +49,51 @@ a{
     font-size: 16px;
 }
 
-article{
-    display: inline-block;
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
 }
 
-h2{
+article {
+    width: calc(25% - 20px); /* Ancho de cada tarjeta (25% del contenedor menos el margen) */
+    margin: 10px; /* Margen entre las tarjetas */
+}
+
+h2 {
     text-align: center;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+p {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    line-height: 25px;
+}
+
+.afooter {
+    position: relative;
+    top: 12px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px 0 0 0;
+}
+
+img {
+    box-shadow: 10px 10px 5px black;
 }
