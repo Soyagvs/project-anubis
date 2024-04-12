@@ -37,7 +37,7 @@ li:last-child {
 }
 
 .active {
-    background-color: crgb(255, 153, 116);
+    background-color: rgb(255, 153, 116);
 }
 
 a {
