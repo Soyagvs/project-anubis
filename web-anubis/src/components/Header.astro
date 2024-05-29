@@ -1,10 +1,29 @@
-<header class="mt-10">
+---
+import LogoImage from "./LogoImage.astro";
+import LogoVideo from "./LogoVideo.astro";
+
+---
+
+<header class="mt-20">
     <nav
-        class="flex flex-row justify-center space-x-10 max-[360px]:flex-col 
+        class="flex flex-row justify-center space-x-10 max-[360px]:flex-col
         max-[360px]:items-center max-[360px]:space-x-0 max-[360px]:space-y-5"
     >
-        <ul class="text-white text-3xl font-semibold"><a href="">Home</a></ul>
-        <ul class="text-white text-3xl font-semibold"><a href="">About</a></ul>
-        <ul class="text-white text-3xl font-semibold"><a href="">Gallery</a></ul>
+        <ul class="text-2xl font-semibold flex flex-row gap-10">
+            <li class="hover:scale-110 transition">
+                <a href="/" >
+                    <LogoImage />
+                    Images
+                </a>
+            </li>
+
+            <li class="hover:scale-110 transition">
+                <a href="/video.astro">
+                    <LogoVideo />
+                    Videos
+                </a>
+            </li>
+        </ul>
     </nav>
 </header>
+
