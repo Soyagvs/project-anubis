@@ -2,6 +2,7 @@
 import LogoImage from "./LogoImage.astro";
 import LogoVideo from "./LogoVideo.astro";
 
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="mt-20">
@@ -11,14 +12,23 @@ import LogoVideo from "./LogoVideo.astro";
     >
         <ul class="text-2xl font-semibold flex flex-row gap-10">
             <li class="hover:scale-110 transition">
-                <a href="/" >
+                <a
+                    href="/"
+                    class={currentPath === "/"
+                        ? "text-orange-400"
+                        : "text-gray-200"}
+                >
                     <LogoImage />
                     Images
                 </a>
             </li>
-
             <li class="hover:scale-110 transition">
-                <a href="/video.astro">
+                <a
+                    href="/gallery"
+                    class={currentPath === "/gallery"
+                        ? "text-orange-400"
+                        : "text-gray-200"}
+                >
                     <LogoVideo />
                     Videos
                 </a>
@@ -26,4 +36,3 @@ import LogoVideo from "./LogoVideo.astro";
         </ul>
     </nav>
 </header>
-

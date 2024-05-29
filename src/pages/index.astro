@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import Articles from "../components/Articles.astro";
+import Header from "../components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <Layout title="Anubis">
-	<Header />
+	<ViewTransitions/>
+	<Header/>
 	<Articles />
 </Layout>
