@@ -1,0 +1,163 @@
+---
+import "../components/styles/Articles.css"
+---
+<main class="flex justify-center py-10">
+    <div class="timeline relative">
+        <!-- Item 1 -->
+        <div class="timeline-item timeline-item-left text-center">
+            <p class="text-sm text-gray-500 mb-2">08 Feb 2014</p>
+            <img
+                src="/img/0.JPG"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item timeline-item-right text-center">
+            <p class="text-sm text-gray-500 mb-2">02 Jan 2014</p>
+            <img
+                src="/img/1.JPG"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item timeline-item-left text-center">
+            <p class="text-sm text-gray-500 mb-2">28 Dec 2014</p>
+            <img
+                src="/img/2.JPG"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item timeline-item-right text-center">
+            <p class="text-sm text-gray-500 mb-2">20 Dec 2013</p>
+            <img
+                src="/img/3.jpg"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 5 -->
+        <div class="timeline-item timeline-item-left text-center">
+            <p class="text-sm text-gray-500 mb-2">16 Dec 2013</p>
+            <img
+                src="/img/4.jpg"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 6 -->
+        <div class="timeline-item timeline-item-right text-center">
+            <p class="text-sm text-gray-500 mb-2">02 Dec 2013</p>
+            <img
+                src="/img/5.jpg"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 7 -->
+        <div class="timeline-item timeline-item-left text-center">
+            <p class="text-sm text-gray-500 mb-2">28 Nov 2013</p>
+            <img
+                src="/img/6.jpg"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 8-->
+        <div class="timeline-item timeline-item-right text-center">
+            <p class="text-sm text-gray-500 mb-2">02 Dec 2013</p>
+            <img
+                src="/img/7.jpg"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 9 -->
+        <div class="timeline-item timeline-item-left text-center">
+            <p class="text-sm text-gray-500 mb-2">28 Nov 2013</p>
+            <img
+                src="/img/8.jpg"
+                alt=""
+                class="hover:scale-110 transition opacity-0"
+            />
+        </div>
+
+        <!-- Item 10 -->
+        <div class="timeline-item timeline-item-right text-center">
+            <p class="text-sm text-gray-500 mb-2">02 Dec 2013</p>
+            <video
+                src="/videos/1.mp4"
+                class="hover:scale-110 transition opacity-0"></video>
+        </div>
+
+        <!-- Item 11 -->
+        <div class="timeline-item timeline-item-left text-center">
+            <p class="text-sm text-gray-500 mb-2">28 Nov 2013</p>
+            <video
+                src="/videos/2.mp4"
+                class="hover:scale-110 transition opacity-0"></video>
+        </div>
+
+        <!-- Item 12 -->
+        <div class="timeline-item timeline-item-right text-center">
+            <p class="text-sm text-gray-500 mb-2">02 Dec 2013</p>
+            <video
+                src="/videos/3.mp4"
+                class="hover:scale-110 transition opacity-0"></video>
+        </div>
+
+        <!-- Item 13 -->
+        <div class="timeline-item timeline-item-left text-center">
+            <p class="text-sm text-gray-500 mb-2">28 Nov 2013</p>
+            <video
+                src="/videos/4.mp4"
+                class="hover:scale-110 transition opacity-0"></video>
+        </div>
+    </div>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions: IntersectionObserverInit = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5, // Ajusta este valor para controlar cuándo el elemento se vuelve visible
+        };
+
+        const observerCallback: IntersectionObserverCallback = (
+            entries: IntersectionObserverEntry[],
+            observer: IntersectionObserver,
+        ) => {
+            entries.forEach((entry) => {
+                const element = entry.target as HTMLElement;
+                if (entry.isIntersecting) {
+                    element.classList.add("show");
+                } else {
+                    element.classList.remove("show");
+                }
+            });
+        };
+
+        const observer: IntersectionObserver = new IntersectionObserver(
+            observerCallback,
+            observerOptions,
+        );
+
+        const items: NodeListOf<HTMLElement> = document.querySelectorAll(
+            ".timeline-item img, .timeline-item video",
+        );
+        items.forEach((item) => {
+            observer.observe(item);
+        });
+    });
+</script>
